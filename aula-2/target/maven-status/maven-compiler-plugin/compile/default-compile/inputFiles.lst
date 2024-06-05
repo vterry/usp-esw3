@@ -1,0 +1,13 @@
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/service/DummyService.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/Cliente.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/repository/DummyPacoteRepository.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/Pacote.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/Hospedagem.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/controller/DummyController.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/Localidade.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/LocacaoVeiculo.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/Contratacao.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/DemoApplication.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/TransladoAereo.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/repository/PacoteRepository.java
+/home/souza/projects/usp-esw3/aula-2/src/main/java/br/com/pecepoli/demo/domain/ItemPacote.java
