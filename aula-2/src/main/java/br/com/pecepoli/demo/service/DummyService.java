@@ -12,7 +12,7 @@ import java.util.List;
 public class DummyService {
 
     @Autowired
-    private DummyPacoteRepository dummyPacoteRepository;
+    private PacoteRepository dummyPacoteRepository;
 
     public List<Pacote> listarPacotes(){
         return dummyPacoteRepository.obterTodos();
