@@ -5,6 +5,7 @@ import br.com.pecepoli.demo.domain.Pacote;
 import br.com.pecepoli.demo.repository.PacoteRepository;
 import br.com.pecepoli.demo.service.PacoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,7 @@ public class PacoteController {
         this.pacoteService = pacoteService;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, value = "/pacotes")
     public List<Pacote> obterTodos() {
         return this.pacoteService.obterPacotes();
