@@ -1,0 +1,20 @@
+Atividades
+
+Atualização do Dominio - Victor
+    1. criar o campo Estado na classe Localidade
+    2. Atualizar o changeset no Liquibase
+    3. Atualizar o database populator
+
+
+Implementar o Repository - Cris
+    1. Dentro do repository criar as queries de busca
+
+
+Implementar o LocalidadeService e Atualizar o Controller - Ricardo
+    1. Criar a classe localidade Service
+    2. Atualizar as rotas no Controller
+
+
+
+FRONT - João
+

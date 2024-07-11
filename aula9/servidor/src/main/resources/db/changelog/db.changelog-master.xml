@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="pece" id="20230730184700">
+        <createTable tableName="localidades">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+            <column name="descricao" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="pece" id="20230730184800">
+        <createTable tableName="clientes">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+            <column name="nome" type="VARCHAR(80)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_nascimento" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="pece" id="20230730185600">
+        <createTable tableName="pacotes">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+            <column name="localidade_id" type="CHAR(36)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descricao" type="VARCHAR(1024)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="pece" id="20230730185900">
+        <createTable tableName="items_pacote">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+            <column name="preco" type="NUMBER(18, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pacote_id" type="CHAR(36)">
+                <constraints nullable="false"
+                             referencedTableName="pacotes"
+                             referencedColumnNames="ID"
+                             foreignKeyName="items_pacote_pacotes_fk"/>
+            </column>
+        </createTable>
+        <createIndex tableName="items_pacote"
+                     indexName="items_pacote_pacotes_idx">
+            <column name="pacote_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="pece" id="20230730190100">
+        <createTable tableName="hoteis">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             unique="true"
+                             referencedTableName="items_pacote"
+                             referencedColumnNames="ID"
+                             foreignKeyName="hoteis_items_pacote_fk"/>
+            </column>
+            <column name="nome" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="endereco" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="pece" id="20230730190400">
+        <createTable tableName="voos">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             unique="true"
+                             referencedTableName="items_pacote"
+                             referencedColumnNames="ID"
+                             foreignKeyName="voos_items_pacote_fk"/>
+            </column>
+            <column name="companhia_area" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="numero_voo" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="pece" id="20230730190500">
+        <createTable tableName="veiculos">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             unique="true"
+                             referencedTableName="items_pacote"
+                             referencedColumnNames="ID"
+                             foreignKeyName="veiculos_items_pacote_fk"/>
+            </column>
+            <column name="marca" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modelo" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="pece" id="20230730185000">
+        <createTable tableName="contratacoes">
+            <column name="id" type="CHAR(36)">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+            <column name="valor" type="NUMBER(18, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_contratacao" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cliente_id" type="CHAR(36)">
+                <constraints nullable="false"
+                             referencedTableName="clientes"
+                             referencedColumnNames="ID"
+                             foreignKeyName="contratacoes_clientes_fk"/>
+            </column>
+            <column name="pacote_id" type="CHAR(36)">
+                <constraints nullable="false"
+                             referencedTableName="pacotes"
+                             referencedColumnNames="ID"
+                             foreignKeyName="contratacoes_pacotes_fk"/>
+            </column>
+        </createTable>
+        <createIndex tableName="contratacoes"
+                     indexName="contratacoes_clientes_idx">
+            <column name="cliente_id"/>
+        </createIndex>
+        <createIndex tableName="contratacoes"
+                     indexName="contratacoes_pacotes_idx">
+            <column name="pacote_id"/>
+        </createIndex>
+    </changeSet>
+ </databaseChangeLog>
