@@ -60,6 +60,7 @@ public class FakerFacade {
     public Localidade localidadeDummy() {
         Localidade localidade = new Localidade();
         localidade.setDescricao(faker.address().cityName());
+        localidade.setEstado(faker.address().state());
         return localidade;
     }
 

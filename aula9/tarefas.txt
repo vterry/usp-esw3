@@ -1,6 +1,6 @@
 Atividades
 
-Atualização do Dominio - Victor
+Atualização do Dominio - Victor // FEITO
     1. criar o campo Estado na classe Localidade
     2. Atualizar o changeset no Liquibase
     3. Atualizar o database populator

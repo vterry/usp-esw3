@@ -153,4 +153,11 @@
             <column name="pacote_id"/>
         </createIndex>
     </changeSet>
+
+    <changeSet author="pece" id="202407131720881067">
+        <addColumn tableName="localidades">
+            <column name="estado" type="VARCHAR(255)" />
+        </addColumn>
+    </changeSet>
+
  </databaseChangeLog>
