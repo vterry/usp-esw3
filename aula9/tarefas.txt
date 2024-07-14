@@ -16,5 +16,5 @@ Implementar o LocalidadeService e Atualizar o Controller - Ricardo
 
 
 
-FRONT - João
+FRONT - João // FEITO
 

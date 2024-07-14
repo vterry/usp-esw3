@@ -40,4 +40,21 @@ public class PacoteController {
         return pacote.map(x -> ResponseEntity.ok(x))
                      .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    // Novo endpoint para /localidades
+    @RequestMapping(method = RequestMethod.GET, value = "/localidades")
+    public ResponseEntity<List<Pacote>> obterTodasLocalidades(@RequestParam(name = "q", required = false) String criteria, Pageable pageable) {
+        Page<Pacote> pacotes = this.pacoteService.obterPacotes(criteria, pageable);
+        return ResponseEntity.ok()
+                .header("Access-Control-Allow-Headers", "*")
+                .header("X-Total-Count", String.valueOf(pacotes.getTotalElements()))
+                .body(pacotes.toList());
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/localidades/{id}")
+    public ResponseEntity<Pacote> obterLocalidade(@PathVariable("id") UUID id) {
+        Optional<Pacote> pacote = this.pacoteService.obterPacote(id);
+        return pacote.map(x -> ResponseEntity.ok(x))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
