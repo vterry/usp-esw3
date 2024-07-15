@@ -4,7 +4,6 @@ import Layout from "./Layout.js";
 import ErrorPage from "./error/Error.js";
 import Home from "./home/Home.js";
 import Localidades from "./localidades/Localidades.js";
-import LocalidadeDetails from "./localidades/LocalidadeDetails.js";
 import Pacotes from "./pacotes/Pacotes.js";
 import PacoteDetails from "./pacotes/PacoteDetails.js";
 
@@ -37,10 +36,6 @@ const router = createBrowserRouter([
         return loadLocalidades(criteria);
       },
       element: <Localidades/>
-    }, {
-      path: "/localidades/:id",
-      loader: async ({params}) => loadLocalidade(params.id),
-      element: <LocalidadeDetails/>
     }]
   }
 ]);

@@ -6,11 +6,11 @@ Atualização do Dominio - Victor // FEITO
     3. Atualizar o database populator
 
 
-Implementar o Repository - Cris
+Implementar o Repository - Cris // Feito
     1. Dentro do repository criar as queries de busca
 
 
-Implementar o LocalidadeService e Atualizar o Controller - Ricardo
+Implementar o LocalidadeService e Atualizar o Controller - Ricardo // Feito
     1. Criar a classe localidade Service
     2. Atualizar as rotas no Controller
 

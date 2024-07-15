@@ -15,12 +15,10 @@ import java.util.UUID;
 @Repository
 public interface LocalidadeRepository extends JpaRepository<Localidade, UUID> {
 
-    // Incluir uma consulta adicionar por Estado;
-    // Incluir uma lista q filtre por descricao ou estado;
+    @Query("select l.id from Localidade l where l.descricao like :criteria or l.estado like :criteria")
+    Page<UUID> findIds(@Param("criteria") String criteria, Pageable pageable);
 
-    //Exemplos
-    //    @Query("select p.id from Pacote p")
-    //    Page<UUID> findIds(Pageable pageable);
-
+    @Query("select l.id from Localidade l")
+    Page<UUID> findIds(Pageable pageable);
 
 }

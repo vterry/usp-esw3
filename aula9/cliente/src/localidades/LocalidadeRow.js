@@ -14,36 +14,25 @@ const DataRow = styled.tr`
 `;
 
 const DataCell = styled.td`
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 `;
 
 const DescricaoCell = styled(DataCell)`
-  padding-left: 20px;
+  padding-left: 30px;
 `;
 
 const EstadoCell = styled(DataCell)`
-  text-align: center;
-`;
-
-const ValorCell = styled(DataCell)`
-  text-align: right;
-  padding-right: 20px;
+  padding-left: 30px;
 `;
 
 function LocalidadeRow(props) {
   const { localidade } = props;
-  const navigate = useNavigate();
-
-  const selectLocalidade = () => {
-    navigate(`/localidades/${localidade.id}`);
-  };
 
   return (
-    <DataRow onClick={selectLocalidade}>
-      <DescricaoCell>{localidade.localidade.descricao}</DescricaoCell>
-      <EstadoCell>{localidade.localidade.estado}</EstadoCell>
-      <ValorCell>{localidade.valor}</ValorCell>
+    <DataRow>
+      <DescricaoCell>{localidade.descricao}</DescricaoCell>
+      <EstadoCell>{localidade.estado}</EstadoCell>
     </DataRow>
   );
 }

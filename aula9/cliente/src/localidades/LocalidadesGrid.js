@@ -7,7 +7,7 @@ const LocalidadesTable = styled.table`
 `;
 
 const HeaderRow = styled.tr`
-  height: 46px;
+  height: 60px;
   border-bottom: 1px solid;
 `;
 
@@ -20,12 +20,6 @@ const DescricaoCell = styled(HeaderCell)`
 
 const EstadoCell = styled(HeaderCell)`
 `
-
-const ValorCell = styled(HeaderCell)`
-  text-align: right;
-  padding-right: 12px;
-`
-
 
 function LocalidadesGrid(props) {
   const { dados } = props;
@@ -44,7 +38,6 @@ function LocalidadesTableHeader() {
     <HeaderRow>
       <DescricaoCell>Descrição</DescricaoCell>
       <EstadoCell>Estado</EstadoCell>
-      <ValorCell>Preço</ValorCell>
     </HeaderRow>
   )
 }
